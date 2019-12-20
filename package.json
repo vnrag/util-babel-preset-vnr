@@ -5,6 +5,9 @@
     "repository": "",
     "eslintConfig": {
         "root": true,
+        "env": {
+            "node": true
+        },
         "extends": [
             "vnr"
         ]
