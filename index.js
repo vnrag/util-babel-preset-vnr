@@ -1,20 +1,24 @@
 module.exports = (api, options = {}) => {
     const {
+        modules = false,
         targets,
-        useBuiltIns = 'entry',
+        useBuiltIns = 'usage',
         corejs = {
             version: 3,
             proposals: true
-        }
+        },
+        include = ['es.array.iterator', 'es.promise', 'es.object.assign', 'es.promise.finally']
     } = options;
 
     const presets = [
         [
             '@babel/env',
             {
+                modules,
                 targets,
                 useBuiltIns,
-                corejs
+                corejs,
+                include
             }
         ],
         '@babel/typescript',
